@@ -8,7 +8,9 @@ This repository provides the official implementation of our **GraphTreeGen** mod
 
 GTG (Graph-to-Graph) is a research framework that provides implementations of multiple graph generation models for brain connectivity analysis. The framework supports both isomorphic and non-isomorphic graph generation, with applications in brain graph synthesis, super-resolution, and cross-modality mapping.
 
-**Main Contribution**: **GraphTreeGen** - our proposed tree-based graph generation method that leverages hierarchical graph structures for improved graph-to-graph transformation.
+![alt text](main_figure.png)
+
+**Main Contribution**: **GraphTreeGen** - GTG significantly outperforms state-of-the-art baselines in self-supervised task, and remains competitive in supervised settings, delivering higher structural fidelity and more precise edge weights while using far less memory. Its modular, resource-efficient design also lays the groundwork for extensions to connectome super-resolution and cross-modality synthesis.
 
 ## Repository Structure
 
@@ -224,31 +226,6 @@ To use your own dataset:
 - **`utils/build_data.py`**: Generate synthetic datasets for experimentation
 - **`utils/MatrixVectorizer.py`**: Convert between matrix and vector representations
 
-### Evaluation
-- **`utils/evaluation_metrics.py`**: Comprehensive evaluation metrics.
-
-### Graph Processing
-- **`utils/GraphTreeProducer.py`**: Tree-based graph processing utilities
-- **`utils/evaluate.py`**: Evaluation utilities for model performance
-
-## Evaluation Metrics
-
-The framework provides comprehensive evaluation metrics:
-
-#### 1. Structural Metrics
-- **Mean Absolute Error (MAE)**: Overall reconstruction error on adjacency matrices
-- **Clustering Coefficient Differences**: Local triangle/cluster preservation
-- **Laplacian Frobenius Distance**: Global connectivity and degree distribution discrepancy
-
-#### 2. Centrality Metrics
-- **Degree Centrality**: Fraction of possible edges attached to each node
-- **Betweenness Centrality**: Fraction of shortest paths going through each node
-- **Eigenvector Centrality**: Influence via connections to high-centrality nodes
-- **Information Centrality**: Centrality based on information flow efficiency
-- **PageRank**: Random-walk based centrality with damping
-- **Katz Centrality**: Counts all walks with attenuation factor
-- **Laplacian Centrality**: Change in Laplacian energy when removing a node
-
 ## Results
 
 Training results are saved in the `results/outputs/` directory with the following structure:
@@ -274,12 +251,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 If you use this framework in your research, please cite the relevant papers:
 
 ```bibtex
-@article{yourname2024graphtreegen,
-  title={GraphTreeGen: Tree-based Graph Generation for Brain Connectivity Analysis},
-  author={Your Name and Co-authors},
-  journal={Journal/Conference Name},
-  year={2024}
-}
+
 ```
 
 ## Contact
